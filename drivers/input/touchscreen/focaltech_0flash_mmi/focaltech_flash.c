@@ -40,7 +40,7 @@
 *****************************************************************************/
 #define FTS_FW_REQUEST_SUPPORT                      1
 /* Example: focaltech_ts_fw_tianma.bin */
-#define FTS_FW_NAME_PREX_WITH_REQUEST               "focaltech-ft8756-0d-0000-liber"
+#define FTS_FW_NAME_PREX_WITH_REQUEST               "focaltech-txd-ft8756-06-0000-odessa"
 
 /*****************************************************************************
 * Global variable or extern global variabls/functions
