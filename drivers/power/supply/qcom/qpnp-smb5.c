@@ -235,10 +235,7 @@ struct smb5 {
 	struct smb_dt_props	dt;
 };
 
-static int __debug_mask;
-module_param_named(
-	debug_mask, __debug_mask, int, 0400
-);
+static int __debug_mask = 0;
 
 static int __pd_disabled;
 module_param_named(
@@ -2107,7 +2104,6 @@ static int smb5_batt_get_prop(struct power_supply *psy,
 		rc = smblib_get_prop_batt_age(chg, val);
 		break;
 	default:
-		pr_err("batt power supply prop %d not supported\n", psp);
 		return -EINVAL;
 	}
 
@@ -3992,7 +3988,7 @@ static int smb5_probe(struct platform_device *pdev)
 
 	chg = &chip->chg;
 	chg->dev = &pdev->dev;
-	__debug_mask |= 0;
+	__debug_mask |= PR_MOTO;
 	chg->debug_mask = &__debug_mask;
 	chg->pd_disabled = &__pd_disabled;
 	chg->weak_chg_icl_ua = &__weak_chg_icl_ua;
